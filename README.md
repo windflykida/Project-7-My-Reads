@@ -12,7 +12,7 @@ It is a good place to organise your books.
 
 ## How to run the app
 
-1. Clone or download the repo from
+1. Clone or download the repo from https://github.com/windflykida/Project-7-My-Reads.git
 
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
