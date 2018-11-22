@@ -25,8 +25,8 @@ import Book from "./Book";
 		if (query) {
 			BooksAPI.search(query).then((searchedBooks) => {
 				searchedBooks.error ?
-					this.setState({searchedBooks: [] }) :
-					this.setState({searchedBooks: searchedBooks});
+        this.setState({searchedBooks: [] }) :
+        this.setState({searchedBooks: searchedBooks});
 			})
       // if we don't have query we will have empty query
 		}else{
@@ -55,32 +55,32 @@ import Book from "./Book";
 
               <div className="search-books-results">
                 <ol className="books-grid">
-									{
+								{
 
-										this.state.searchedBooks.map((newBook) => {
-											newBook.shelf = "none";
-											this.props.books.map(book => (
-                        // after removing letters in a query searchpage should not display books
-                        (this.state.searchedBooks.length > 0),
-                        //if true set bookshelf for this book
-												book.id === newBook.id ?
-												newBook.shelf = book.shelf : ""
+								this.state.searchedBooks.map((newBook) => {
+									newBook.shelf = "none";
+										this.props.books.map(book => (
+                    // after removing letters in a query searchpage should not display books
+                      (this.state.searchedBooks.length > 0),
+                      //if true set bookshelf for this book
+											book.id === newBook.id ?
+											newBook.shelf = book.shelf : ""
 											));
 
-											return (
-												<li key = {newBook.id}>
-													<Book
-														book={newBook}
-														moveBook={this.props.moveBook}
-														shelf={newBook.shelf}
-													/>
-												</li>
-											)
-										})
-									}
-								</ol>
-              </div>
-            </div>
+								return (
+									<li key = {newBook.id}>
+										<Book
+										  book={newBook}
+											moveBook={this.props.moveBook}
+											shelf={newBook.shelf}
+										/>
+								</li>
+								)
+							})
+						}
+				</ol>
+    </div>
+  </div>
 		);
 	}
 }
