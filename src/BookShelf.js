@@ -23,6 +23,8 @@ import Book from "./Book";
                 < Book
                     book={book}
                     moveBook={this.props.moveBook}
+                    shelf={book.shelf}
+                    currentShelf = {book.name}
                 />
                 </li>
               )

@@ -31,6 +31,7 @@ import Book from "./Book";
       // if we don't have query we will have empty query
 		}else{
 			this.setState({searchedBooks: [] })
+
 		}
 	}
 
@@ -58,7 +59,7 @@ import Book from "./Book";
 								{
 
 								this.state.searchedBooks.map((newBook) => {
-									newBook.shelf = "none";
+									  newBook.shelf = "none";
 										this.props.books.map(book => (
                     // after removing letters in a query searchpage should not display books
                       (this.state.searchedBooks.length > 0),
@@ -73,6 +74,7 @@ import Book from "./Book";
 										  book={newBook}
 											moveBook={this.props.moveBook}
 											shelf={newBook.shelf}
+                      searchResult={this.searchResult}
 										/>
 								</li>
 								)
