@@ -4,7 +4,8 @@ import {Link} from "react-router-dom";
 import * as BooksAPI from "./BooksAPI";
 import Book from "./Book";
 
-
+// React Tutorial from Udacity
+// https://kolosek.com/react-jsx-loops/
 
   class SearchPage extends React.Component {
 
@@ -59,14 +60,15 @@ import Book from "./Book";
 								{
 
 								this.state.searchedBooks.map((newBook) => {
-									  newBook.shelf = "none";
-										this.props.books.map(book => (
-                    // after removing letters in a query searchpage should not display books
-                      (this.state.searchedBooks.length > 0),
-                      //if true set bookshelf for this book
-											book.id === newBook.id ?
-											newBook.shelf = book.shelf : ""
-											));
+										this.props.books.map(book => {
+                      return (
+                        // after removing letters in a query searchpage should not display books
+                          (this.state.searchedBooks.length > 0),
+                          //if true set bookshelf for this book
+    											book.id === newBook.id ?
+    											newBook.shelf = book.shelf : ""
+                      )
+                    });
 
 								return (
 									<li key = {newBook.id}>

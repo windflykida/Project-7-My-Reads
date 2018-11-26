@@ -9,16 +9,22 @@ import React from "react";
       value:"none"
     }
 
-    render() {
-      // first step - check if the book has a cover
-      let thumbnailImage = this.props.book.imageLinks ?
-    this.props.book.imageLinks.thumbnail : [];
+    // first step - check if the book has a cover
+    //placeholder.com/
+    thumbnailImage = () => {
+      // Cover must be defined - placeholder
+      let placeholder = "";
+    this.props.book.imageLinks ?
+    placeholder = this.props.book.imageLinks.thumbnail : placeholder ="http://via.placeholder.com/128x193/000000/FFFFFF/?text=No+Image";
+  return placeholder;
+}
 
+    render() {
 
       return (
         <div className="book">
           <div className="book-top">
-            <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${thumbnailImage}")
+            <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${this.thumbnailImage()}")
               `}}>
               </div>
           <div className="book-shelf-changer">
@@ -37,8 +43,8 @@ import React from "react";
 
           </div>
         </div>
-        {/* this a component and titile or author of the book don't change so we use props*/}
-        <div className="book-title">{this.props.book.title}</div>
+        {/* this a component and title or author of the book don't change so we use props*/}
+        <div className="book-title">{this.props.book.currentShelf}</div>
         <div className="book-authors">{this.props.book.authors}</div>
       </div>
       )

@@ -37,14 +37,16 @@ state = {
    return (
      <div className="app">
 
-        <Route exact path="/" render={() => (
+        <Route exact path="/"
+         render={() => (
           <HomePage
             books={this.state.books}
             moveBook={this.moveBook}
           />
       )}/>
 
-        <Route exact path="/search" render={() => (
+        <Route exact path="/search"
+         render={() => (
           <SearchPage
             moveBook={this.moveBook}
             books={this.state.books}
